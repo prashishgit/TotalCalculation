@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace TotalCalculation
 {
-    public partial class Form1 : Form
+    public partial class LoginDetails : Form
     {
-        public Form1()
+        public LoginDetails()
         {
             InitializeComponent();
+        }
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+            Total t = new Total();
         }
     }
 }
