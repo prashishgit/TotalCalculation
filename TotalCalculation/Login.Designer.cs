@@ -43,7 +43,7 @@
             this.lblUserName.AutoSize = true;
             this.lblUserName.Location = new System.Drawing.Point(37, 36);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(75, 17);
+            this.lblUserName.Size = new System.Drawing.Size(73, 16);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "UserName";
             // 
@@ -52,7 +52,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(42, 94);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(69, 17);
+            this.lblPassword.Size = new System.Drawing.Size(67, 16);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Password";
             // 
@@ -61,7 +61,7 @@
             this.lblComboBox.AutoSize = true;
             this.lblComboBox.Location = new System.Drawing.Point(42, 152);
             this.lblComboBox.Name = "lblComboBox";
-            this.lblComboBox.Size = new System.Drawing.Size(70, 17);
+            this.lblComboBox.Size = new System.Drawing.Size(68, 16);
             this.lblComboBox.TabIndex = 1;
             this.lblComboBox.Text = "UserType";
             // 
@@ -86,6 +86,7 @@
             this.cboUserType.Name = "cboUserType";
             this.cboUserType.Size = new System.Drawing.Size(236, 24);
             this.cboUserType.TabIndex = 3;
+            //this.cboUserType.SelectedIndexChanged += new System.EventHandler(this.cboUserType_SelectedIndexChanged);
             // 
             // btnLogin
             // 

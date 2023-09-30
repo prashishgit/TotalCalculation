@@ -23,7 +23,7 @@ namespace TotalCalculation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Total());
+            Application.Run(new Login());
            
         }
     }

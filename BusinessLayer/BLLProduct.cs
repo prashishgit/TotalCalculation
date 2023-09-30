@@ -12,7 +12,7 @@ namespace BusinessLayer
     {
         public int CreateProduct(ProductDetails pro)
         {
-            SqlConnection con = new SqlConnection("Data Source=PRASHISH\\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection("Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("insert into tblProduct values(@a,@b,@c,@d)", con);
             cmd.Parameters.AddWithValue("@a", pro.CategoryId);
             cmd.Parameters.AddWithValue("@b", pro.ProductName);
@@ -27,7 +27,7 @@ namespace BusinessLayer
         public List<ProductDetails> GetAllProducts()
         {
             List<ProductDetails> list = new List<ProductDetails>();
-            SqlConnection con = new SqlConnection("Data Source=PRASHISH\\SQLEXPRESS; Integrated Security=true; Database=BroadwayDB;");
+            SqlConnection con = new SqlConnection("Data Source=Prashish; Integrated Security=true; Database=InventoryManagementDB;");
             SqlCommand cmd = new SqlCommand("SELECT tblCategory.CategoryName, tblProduct.ProductId, tblProduct.ProductName, tblProduct.SellingPrice, tblProduct.UnitPrice FROM tblCategory INNER JOIN tblProduct ON tblCategory.CategoryId = tblProduct.CategoryId", con);
             SqlDataReader dr = null;
             con.Open();
@@ -51,7 +51,7 @@ namespace BusinessLayer
         public ProductDetails GetProductById(int productid)
         {
             ProductDetails pro = new ProductDetails();
-            SqlConnection con = new SqlConnection("Data Source=PRASHISH\\SQLEXPRESS; Integrated Security=true; Database=BroadwayDB;");
+            SqlConnection con = new SqlConnection("Data Source=Prashish; Integrated Security=true; Database=InventoryManagementDB;");
             SqlCommand cmd = new SqlCommand("select * from tblProduct where ProductId=@a", con);
             cmd.Parameters.AddWithValue("@a", productid);
             SqlDataReader dr = null;
@@ -73,7 +73,7 @@ namespace BusinessLayer
         public List<ProductDetails> GetProductByCategoryId(int categoryid)
         {
             List<ProductDetails> list = new List<ProductDetails>();
-            SqlConnection con = new SqlConnection("Data Source=PRASHISH\\SQLEXPRESS; Integrated Security=true; Database=BroadwayDB;");
+            SqlConnection con = new SqlConnection("Data Source=Prashish; Integrated Security=true; Database=InventoryManagementDB;");
             SqlCommand cmd = new SqlCommand("select * from tblProduct where CategoryId=@a", con);
             cmd.Parameters.AddWithValue("@a", categoryid);
             SqlDataReader dr = null;
@@ -97,7 +97,7 @@ namespace BusinessLayer
         public ProductDetails GetProductByProductId(int productid)
         {
             ProductDetails pro = new ProductDetails();
-            SqlConnection con = new SqlConnection("Data Source=PRASHISH\\SQLEXPRESS; Integrated Security=true; Database=BroadwayDB;");
+            SqlConnection con = new SqlConnection("Data Source=Prashish; Integrated Security=true; Database=InventoryManagementDB;");
             SqlCommand cmd = new SqlCommand("select * from tblProduct where ProductId=@a", con);
             cmd.Parameters.AddWithValue("@a", productid);
             SqlDataReader dr = null;
@@ -120,7 +120,7 @@ namespace BusinessLayer
         }
         public int UpdateProduct(ProductDetails pro)
         {
-            SqlConnection con = new SqlConnection("Data Source=PRASHISH\\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection("Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("update tblProduct set CategoryId=@a,ProductName=@b,SellingPrice=@c,UnitPrice=@d where ProductId=@e", con);
             cmd.Parameters.AddWithValue("@a", pro.CategoryId);
             cmd.Parameters.AddWithValue("@b", pro.ProductName);
@@ -135,7 +135,7 @@ namespace BusinessLayer
         }
         public int DeleteProduct(int productid)
         {
-            SqlConnection con = new SqlConnection("Data Source=PRASHISH\\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection("Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("delete from tblProduct where ProductId=@a", con);
             cmd.Parameters.AddWithValue("@a", productid);
             con.Open();

@@ -13,7 +13,7 @@ namespace BusinessLayer
         public List<UserTypeDetails> GetAllUserType()
         {
             List<UserTypeDetails> list = new List<UserTypeDetails>();
-            SqlConnection con = new SqlConnection("Data Source=PRASHISH\\SQLEXPRESS; Integrated Security=true; Database=BroadwayDB;");
+            SqlConnection con = new SqlConnection("Data Source=Prashish; Integrated Security=true; Database=InventoryManagementDB;");
             SqlCommand cmd = new SqlCommand("SELECT tblUser.UserId, tblUser.Username, tblUser.Password, tblUserType.UserType FROM tblUser INNER JOIN tblUserType ON tblUser.UsertypeId = tblUserType.UserTypeId");
             SqlDataReader dr = null;
             dr = cmd.ExecuteReader();

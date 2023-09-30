@@ -12,7 +12,7 @@ namespace BusinessLayer
     {
         public int AddLoginDetail(LoginDetails ld)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=PRASHISH\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection(@"Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("insert into tblLoginDetail values(@a,@b,@c,@d);SELECT SCOPE_IDENTITY();", con);
             cmd.Parameters.AddWithValue("@a", ld.UserId);
             cmd.Parameters.AddWithValue("@b", ld.LoginTime);
@@ -29,7 +29,7 @@ namespace BusinessLayer
         }
         public int Logoutupdate(LoginDetails ld)
         {
-            SqlConnection con = new SqlConnection("Data Source=PRASHISH\\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection("Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("update tblLoginDetail set LogoutTime=@a where LoginDetailId=@b and UserId=@c", con);
             cmd.Parameters.AddWithValue("@a", ld.LogoutTime);
             cmd.Parameters.AddWithValue("@b", ld.LoginDetailId);

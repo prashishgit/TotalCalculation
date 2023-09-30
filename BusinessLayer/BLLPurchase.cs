@@ -12,7 +12,7 @@ namespace BusinessLayer
     {
         public int CreatePurchase(PurchaseDetails pd)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=PRASHISH\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection(@"Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("insert into tblPurchase values(@a,@c,@d,@e,@f,@g,@h)", con);
             cmd.Parameters.AddWithValue("@a", pd.InvoiceId);
             cmd.Parameters.AddWithValue("@c", pd.CategoryId);

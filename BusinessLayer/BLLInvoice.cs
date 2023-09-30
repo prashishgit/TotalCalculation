@@ -13,7 +13,7 @@ namespace BusinessLayer
         public InvoiceDetails GetMaxInvoice()
         {
             InvoiceDetails ind = new InvoiceDetails();
-            SqlConnection con = new SqlConnection(@"Data Source=PRASHISH\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection(@"Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("select top 1 InvoiceNo from tblInvoice order by InvoiceId desc", con);
             SqlDataReader dr = null;
             con.Open();
@@ -29,7 +29,7 @@ namespace BusinessLayer
         }
         public int CreateInvoice(InvoiceDetails ind)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=PRASHISH\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection(@"Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("insert into tblInvoice values(@a,@b,@c,@d);SELECT SCOPE_IDENTITY();", con);
             cmd.Parameters.AddWithValue("@a", ind.CustomerId);
             cmd.Parameters.AddWithValue("@b", ind.InvoiceNo);

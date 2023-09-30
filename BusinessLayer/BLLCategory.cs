@@ -12,7 +12,7 @@ namespace BusinessLayer
     {
         public int CreateCategory(CategoryDetails cat)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=PRASHISH\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection(@"Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("insert into tblCategory values(@a)", con);
             cmd.Parameters.AddWithValue("@a", cat.CategoryName);
 
@@ -26,7 +26,7 @@ namespace BusinessLayer
         }
         public int UpdateCategory(CategoryDetails cat)
         {
-            SqlConnection con = new SqlConnection("Data Source=PRASHISH\\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection("Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("update tblUser set CategoryName=@a where CategoryId=@e", con);
             cmd.Parameters.AddWithValue("@a", cat.CategoryName);
             cmd.Parameters.AddWithValue("@b", cat.CategoryId);
@@ -39,7 +39,7 @@ namespace BusinessLayer
         }
         public int DeleteUser(int userId)
         {
-            SqlConnection con = new SqlConnection("Data Source=PRASHISH\\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection("Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("delete from tblStudent where UserId=@a", con);
             cmd.Parameters.AddWithValue("@a", userId);
             con.Open();
@@ -51,7 +51,7 @@ namespace BusinessLayer
         public List<CategoryDetails> GetAllCategory()
         {
             List<CategoryDetails> list = new List<CategoryDetails>();
-            SqlConnection con = new SqlConnection(@"Data Source=PRASHISH\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection(@"Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("select * from tblCategory", con);
             SqlDataReader dr = null;
             con.Open();
@@ -71,7 +71,7 @@ namespace BusinessLayer
         //public CategoryDetails GetCategoryById(int categoryid)
         //{
         //    CategoryDetails ud = new CategoryDetails();
-        //    SqlConnection con = new SqlConnection("Data Source=PRASHISH\\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+        //    SqlConnection con = new SqlConnection("Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
         //    SqlCommand cmd = new SqlCommand("select * from tblCategory where category=@f", con);
         //    cmd.Parameters.AddWithValue("@f", categoryid);
         //    SqlDataReader dr = null;

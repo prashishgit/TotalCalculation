@@ -12,7 +12,7 @@ namespace BusinessLayer
     {
         public int CreateCustomer(CustomerDetails cd)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=PRASHISH\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection(@"Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("insert into tblCustomer values(@a,@b,@c)", con);
             cmd.Parameters.AddWithValue("@a", cd.CustomerName);
             cmd.Parameters.AddWithValue("@b", cd.Email);
@@ -29,7 +29,7 @@ namespace BusinessLayer
         public List<CustomerDetails> GetAllCustomers()
         {
             List<CustomerDetails> list = new List<CustomerDetails>();
-            SqlConnection con = new SqlConnection(@"Data Source=PRASHISH\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection(@"Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("select * from tblCustomer", con);
             SqlDataReader dr = null;
             con.Open();

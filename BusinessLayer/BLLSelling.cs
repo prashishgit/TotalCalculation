@@ -13,7 +13,7 @@ namespace BusinessLayer
         public int CreateSells(SellingDetails sed)
         {
            
-            SqlConnection con = new SqlConnection(@"Data Source=PRASHISH\SQLEXPRESS;Integrated Security=true; Database=BroadwayDB");
+            SqlConnection con = new SqlConnection(@"Data Source=Prashish;Integrated Security=true; Database=InventoryManagementDB");
             SqlCommand cmd = new SqlCommand("insert into tblSelling values(@a,@c,@d,@e,@f,@g,@h)", con);
             cmd.Parameters.AddWithValue("@a", sed.InvoiceSellingId);
             cmd.Parameters.AddWithValue("@c", sed.CategoryId);
